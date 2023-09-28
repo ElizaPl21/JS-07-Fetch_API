@@ -79,7 +79,7 @@ document.getElementById('previous-btn')
 
 
     /////////////////////POST, no es asincrono
-   /* fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
         title: 'title1',
@@ -90,7 +90,7 @@ document.getElementById('previous-btn')
         'Content-type': 'application/json; charset=UTF-8',
     }
 }).then(res => res.json())
-    .then(json => console.log(json))*/
+    .then(json => console.log(json))
 
 
     ////////////////// EJERCICIOS
