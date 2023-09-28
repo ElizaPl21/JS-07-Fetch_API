@@ -45,3 +45,14 @@ body {
     background-color: #fb8332;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
+
+#pokemonCard {
+    border-radius: 25px;
+    background: linear-gradient(#a5d7ef, #6ab9e4,#9198e5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-style: double;
+    border-color: rgb(18, 14, 230)
+}

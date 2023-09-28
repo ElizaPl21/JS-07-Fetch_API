@@ -30,8 +30,8 @@ document.getElementById('get-btn')
         const text = document.getElementById('poke-name').value.toLowerCase();
         const pokemon = await fetchPokemon(text);
         localStorage.setItem('currentPokeId', pokemon.id);
-        console.log(pokemon);
-        updateCard(pokemon);
+        console.log(pokemon.name);
+        createCard(pokemon);
     })
 
 document.addEventListener('DOMContent.Loaded', async ()=>{
@@ -39,7 +39,7 @@ document.addEventListener('DOMContent.Loaded', async ()=>{
     const initialId = storedId ? parseInt(storedId) : 1;
     const pokemon = await fetchPokemon(initialId);
     console.log(pokemon.name);
-    updateCard(pokemon);
+    createCard(pokemon);
 })
 
 //Obtener el anterior
@@ -54,7 +54,7 @@ document.getElementById('previous-btn')
         const pokemon = await fetchPokemon(newId);
         localStorage.setItem('currentPokeId', pokemon.id);
         console.log(pokemon.name); 
-        updateCard(pokemon);
+        createCard(pokemon);
     })
 
     document.getElementById('next-btn')
@@ -64,11 +64,11 @@ document.getElementById('previous-btn')
         const pokemon = await fetchPokemon(newId);
         localStorage.setItem('currentPokeId', pokemon.id);
         console.log(pokemon.name);
-        updateCard(pokemon); 
+        createCard(pokemon); 
     })
 
     //Creación de tarjeta
-    function updateCard (pokemon){
+    function createCard (pokemon){
         document.getElementById('name').textContent= "Nombre: " + pokemon.name;
         document.getElementById('id').textContent= "ID: " + pokemon.id;
         document.getElementById('weight').textContent= "Weight: " + pokemon.weight;
@@ -79,7 +79,7 @@ document.getElementById('previous-btn')
 
 
     /////////////////////POST, no es asincrono
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+   /* fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
         title: 'title1',
@@ -90,7 +90,7 @@ document.getElementById('previous-btn')
         'Content-type': 'application/json; charset=UTF-8',
     }
 }).then(res => res.json())
-    .then(json => console.log(json))
+    .then(json => console.log(json))*/
 
 
     ////////////////// EJERCICIOS
